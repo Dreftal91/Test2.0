@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition and Subtraction</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li>
+            <a id="homefromas" href="Index.html">Home</a>
+        </li>
+        <li>
+            <a id="muldivfromas" href="mul&div.html">Multiplication and Division Test</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="questionnaires">
+    <div class="aquestionnaire">
+        <h2>Adding!</h2>
+        <div class="aquestion1">
+            <fieldset>
+                <h2>What is 2+2?</h2>
+                <button id="aq1three">Three</button>
+                <button id="aq1four">Four</button>
+                <button id="aq1five">Five</button>
+                <h4 id="aq1selection" class="aq1selectionclass"></h4>
+            </fieldset>
+        </div>
+        <div class="aquestion2">
+            <fieldset>
+                <h2>What is 13+2?</h2>
+                <button id="aq2fourteen">Fourteen</button>
+                <button id="aq2fifteen">Fifteen</button>
+                <button id="aq2sixteen">Sixteen</button>
+                <h4 id="aq2selection" class="aq2selectionclass"></h4>
+            </fieldset>
+        </div>
+        <button id="seescore">See Score</button>
+        <div class="finalscore">
+            <h4 id="finalscoretext"></h4>
+        </div>
+    </div>
+    <div class="squestionnaire">
+    </div>
+</div>
+<script>
+    const aquestion1 = document.querySelector('.aquestion1');
+    const aq1selectionclass = document.querySelector('.aq1selectionclass');
+    const aq2selectionclass = document.querySelector('.aq2selectionclass')
+    const finalscoreclass = document.querySelector('.finalscore')
+
+    let aq1threebutton = document.getElementById('aq1three');
+    let aq1fourbutton = document.getElementById('aq1four');
+    let aq1fivebutton = document.getElementById('aq1five');
+    let aquestion1score = 0;
+
+    let aq2fourteenbutton = document.getElementById('aq2fourteen');
+    let aq2fifteenbutton = document.getElementById('aq2fifteen');
+    let aq2sixteenbutton = document.getElementById('aq2sixteen');
+    let aquestion2score = 0;
+
+    let seescorebutton = document.getElementById('seescore');
+
+    seescorebutton.addEventListener('click', function (e) {
+        if (aquestion1score === 2 && aquestion2score === 2) {
+            finalscoreclass.innerHTML = `<h4 id="finalscoretext">You got two points!</h4>`
+        } else if (aquestion1score+aquestion2score === 2) {
+            finalscoreclass.innerHTML = `<h4 id="finalscoretext">You got no points!</h4>`;
+        } else if (aquestion1score+aquestion2score === 3 || aquestion1score+aquestion2score === 5) {
+            finalscoreclass.innerHTML = `<h4 id="finalscoretext">You got one point!</h4>`;
+        } else {
+            finalscoreclass.innerHTML = `<h4 id="finalscoretext">You got zero points!</h4>`;
+        }
+    })
+
+    aq1threebutton.addEventListener('click', function (e) {
+        aq1selectionclass.innerHTML = `<h4>You chose three!</h4>`;
+        aquestion1score = 1;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+    aq1fourbutton.addEventListener('click', function (e) {
+        aq1selectionclass.innerHTML = `<h4>You chose four!</h4>`;
+        aquestion1score = 2;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+    aq1fivebutton.addEventListener('click', function (e) {
+        aq1selectionclass.innerHTML = `<h4>You chose five!</h4>`;
+        aquestion1score = 3;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+
+    aq2fourteenbutton.addEventListener('click', function (e) {
+        aq2selectionclass.innerHTML = `<h4>You chose fourteen!</h4>`;
+        aquestion2score = 1;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+    aq2fifteenbutton.addEventListener('click', function (e) {
+        aq2selectionclass.innerHTML = `<h4>You chose fifteen!</h4>`;
+        aquestion2score = 2;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+    aq2sixteenbutton.addEventListener('click', function (e) {
+        aq2selectionclass.innerHTML = `<h4>You chose sixteen!</h4>`;
+        aquestion2score = 3;
+        finalscoreclass.innerHTML = `<h4 id="finalscoretext"></h4>`
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+      <a id="addsubfromh" href="add&sub.html">Addition and Subtraction Test</a>
+    </li>
+    <li>
+      <a id="muldivfromh" href="mul&div.html">Multiplication and Division Test</a>
+    </li>
+  </ul>
+</nav>
+<div class="pick">
+    <h1 id="picktext">Pick a Test!</h1>
+</div>
+
+<script>
+    let h1pick = document.querySelector('.pick')
+    const addsub = document.getElementById('addsubfromh');
+    const muldiv = document.getElementById('muldivfromh');
+
+    addsub.addEventListener('mouseover', function (e) {
+        h1pick.innerHTML = `<h1 id="picktext">Addition and Subtraction?</h1>`
+    })
+    addsub.addEventListener('mouseout', function (e) {
+        h1pick.innerHTML = `<h1 id="picktext">Pick a Test!</h1>`
+    })
+    muldiv.addEventListener('mouseover', function (e) {
+        h1pick.innerHTML = `<h1 id="picktext">Multiplication and Division?</h1>`
+    })
+    muldiv.addEventListener('mouseout', function (e) {
+        h1pick.innerHTML = `<h1 id="picktext">Pick a Test!</h1>`
+    })
+</script>
+</body>
+</html>
